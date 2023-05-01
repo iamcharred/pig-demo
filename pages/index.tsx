@@ -5,6 +5,8 @@ import Game from "@/components/Game";
 import Instructions from "@/components/Instructions";
 import Leaderboard from "@/components/Leaderboard";
 import { useState, useEffect } from "react";
+import EliizaLogo from "@/public/eliiza.svg";
+import Image from "next/image";
 
 export default function Home() {
   const session = useSession();
@@ -73,7 +75,14 @@ export default function Home() {
       <div className="flex justify-center w-full h-screen">
         <div className="w-full max-w-5xl h-screen bg-white flex flex-col p-5">
           <nav className="flex h-14 flex-row items-center justify-between">
-            <p className="font-sans text-3xl">Prompt Injection Game</p>
+            <p className="font-sans text-3xl">
+              <Image
+                src={EliizaLogo}
+                alt="Eliiza logo"
+                className="w-10 inline-block"
+              />{" "}
+              Prompt Injection Game
+            </p>
             {session ? (
               <div className="flex">
                 {changeUsername ? (

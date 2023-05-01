@@ -73,7 +73,7 @@ const Instructions = () => {
         </svg>
       </div>
       {isOpen && (
-        <ul className="list-disc list-inside mt-2">
+        <ul className="list-none list-inside mt-2">
           <li>
             🧙 Prompt Injection Game (PIG) is a game where you need to trick a
             string reversal system into revealing a secret code
