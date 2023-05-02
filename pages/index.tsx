@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import EliizaLogo from "@/public/eliiza.svg";
 import Image from "next/image";
 import { useSmallScreen } from "@/utils/useSmallScreen";
+import { attemptsAllowed } from "@/utils/attempts";
 
 export default function Home() {
   const session = useSession();
@@ -96,8 +97,8 @@ export default function Home() {
                         Prompt Injection Game
                       </h1>
                       <span className="font-sans text-sm text-center pb-2 mb-1 border-b mx-4 align-center">
-                        20 attempts, 3 levels. Trick the AI model to give you
-                        the secret code to pass.
+                        {attemptsAllowed} attempts, 3 levels. Trick the AI model
+                        to give you the secret code to pass.
                       </span>
 
                       <Auth

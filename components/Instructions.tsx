@@ -1,3 +1,4 @@
+import { attemptsAllowed } from "@/utils/attempts";
 import { useSmallScreen } from "@/utils/useSmallScreen";
 import { useState } from "react";
 import Modal from "react-modal";
@@ -69,7 +70,7 @@ const Instructions = () => {
             🔮 Your objective is to prompt the system in such a way that the
             system reveals a secret code in the form of a 10 character hash.
           </li>
-          <li>You get 20 total attempts to pass 3 levels.</li>
+          <li>You get {attemptsAllowed} total attempts to pass 3 levels.</li>
           <li>
             🥳 If you succeed in your attempt, the model will respond with a
             secret code.

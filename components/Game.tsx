@@ -5,6 +5,8 @@ import EndGame from "@/components/EndGame";
 import { Chat } from "@/components/Chat/Chat";
 import { Message as NewMessage, Role } from "@/types";
 import Instructions from "./Instructions";
+import { attemptsAllowed } from "@/utils/attempts";
+
 const useNewChat = true;
 
 type Message = {
@@ -110,11 +112,13 @@ const Game = ({ session }: { session: Session }) => {
       <div className="flex flex-row justify-between pb-2">
         <div>
           <span className="font-sans text-xl pr-2">Level:</span>
-          <span className="font-sans text-xl">{level}</span>
+          <span className="font-sans text-xl">{level}/3</span>
         </div>
         <div>
           <span className="font-sans text-xl pr-2">Attempts:</span>
-          <span className="font-sans text-xl">{attempts}</span>
+          <span className="font-sans text-xl">
+            {attempts}/{attemptsAllowed}
+          </span>
         </div>
       </div>
       <div className="flex items-center justify-between">
@@ -125,9 +129,9 @@ const Game = ({ session }: { session: Session }) => {
         </h3>
         <Instructions />
       </div>
-      {attempts > 20 || level > 3 ? (
+      {attempts > attemptsAllowed || level > 3 ? (
         <EndGame
-          Won={level > 3 && attempts <= 20}
+          Won={level > 3 && attempts <= attemptsAllowed}
           Attempts={attempts}
           Level={level}
         />
