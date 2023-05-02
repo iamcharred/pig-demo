@@ -1,20 +1,22 @@
+import { useSmallScreen } from "@/utils/useSmallScreen";
 import { useState } from "react";
-
+import Modal from "react-modal";
 const Instructions = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
+  const isSmallScreen = useSmallScreen();
 
   return (
-    <div
+    <button
       className={`border bg-gray-100 shadow rounded-lg p-2 cursor-pointer ${
         isOpen ? "h-auto" : "h-12 overflow-hidden"
       } transition-height duration-500 ease-in-out`}
       onClick={handleClick}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-center">
         <div className="flex items-center">
           <svg
             fill="#000000"
@@ -55,24 +57,9 @@ const Instructions = () => {
               <g></g>
             </g>
           </svg>
-
-          <h3 className="text-lg font-medium pl-2">How to play</h3>
         </div>
-        <svg
-          className={`h-8 w-8 transition-transform transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M6.293 7.293a1 1 0 0 1 1.414 0L10 9.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
       </div>
-      {isOpen && (
+      <Modal isOpen={isOpen}>
         <ul className="list-none list-inside mt-2">
           <li>
             🧙 Prompt Injection Game (PIG) is a game where you need to trick a
@@ -97,8 +84,8 @@ const Instructions = () => {
           </li>
           <li>Good luck!</li>
         </ul>
-      )}
-    </div>
+      </Modal>
+    </button>
   );
 };
 

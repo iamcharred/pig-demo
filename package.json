@@ -17,6 +17,7 @@
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/auth-ui-react": "^0.2.8",
     "@supabase/supabase-js": "^2.8.0",
+    "@tabler/icons-react": "^2.9.0",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -28,11 +29,13 @@
     "openai": "^3.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-modal": "^3.16.1",
     "typescript": "4.9.5",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
+    "@types/react-modal": "^3.16.0",
     "@types/uuid": "^9.0.1",
     "concurrently": "^7.6.0",
     "prettier": "^2.8.7",
