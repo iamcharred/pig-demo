@@ -1,14 +1,38 @@
 import { attemptsAllowed } from "@/utils/attempts";
-import { useSmallScreen } from "@/utils/useSmallScreen";
-import { useState } from "react";
-import Modal from "react-modal";
-const Instructions = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import { MouseEventHandler, useEffect, useRef } from "react";
 
-  const handleClick = () => {
-    setIsOpen((prevIsOpen) => !prevIsOpen);
+interface FixedDialogInterface extends HTMLDialogElement {
+  close: (returnValue?: string | undefined) => void;
+  open: boolean;
+  showModal: () => void;
+}
+
+const Instructions = () => {
+  const dialogRef = useRef<FixedDialogInterface>(null);
+  const isOpen = dialogRef.current?.open;
+
+  useEffect(() => {
+    dialogRef.current?.addEventListener("click", (e) => {
+      const dialogDimensions =
+        dialogRef.current?.getBoundingClientRect() as DOMRect;
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        dialogRef.current?.close();
+      }
+    });
+  }, []);
+
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
+    if (dialogRef.current) {
+      dialogRef.current.open
+        ? dialogRef.current.close()
+        : dialogRef.current?.showModal();
+    }
   };
-  const isSmallScreen = useSmallScreen();
 
   return (
     <button
@@ -60,7 +84,7 @@ const Instructions = () => {
           </svg>
         </div>
       </div>
-      <Modal isOpen={isOpen}>
+      <dialog ref={dialogRef} open={isOpen}>
         <ul className="list-none list-inside mt-2">
           <li>
             🧙 Prompt Injection Game (PIG) is a game where you need to trick a
@@ -85,7 +109,7 @@ const Instructions = () => {
           </li>
           <li>Good luck!</li>
         </ul>
-      </Modal>
+      </dialog>
     </button>
   );
 };
