@@ -4,10 +4,13 @@ import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import Game from "@/components/Game";
 import Leaderboard from "@/components/Leaderboard";
 import { useState, useEffect } from "react";
-import EliizaLogo from "@/public/eliiza.svg";
+import MantelLogo from "@/public/mantelgroup.svg";
+import GoogleLogo from "@/public/google.png"; // Assuming you have the Google logo in this location
+import NewsCorpLogo from "@/public/newscorp.png"; // Assuming you have the NewsCorp logo here
 import Image from "next/image";
 import { useSmallScreen } from "@/utils/useSmallScreen";
 import { attemptsAllowed } from "@/utils/attempts";
+import Instructions from "@/components/Instructions";
 
 export default function Home() {
   const session = useSession();
@@ -59,14 +62,45 @@ export default function Home() {
       </Head>
       <div className="flex justify-center w-full h-screen">
         <div className="w-full max-w-5xl h-screen bg-white flex flex-col p-5">
-          <nav className="flex h-14 flex-row items-center justify-between">
-            <p className="font-sans text-3xl whitespace-nowrap">
+          <div className="w-full flex justify-between items-center py-4 px-5">
+            <div className="flex-shrink-0">
               <Image
+                src={MantelLogo}
+                alt="Mantel Group logo"
+                width={200}  // Explicit smaller width
+                height={200 * 288.46 / 800}  // Maintain aspect ratio
+                className="object-contain"
+              />
+            </div>
+            <div className="flex-shrink-0">
+              <Image
+                // src="http://newscorp.com/wp-content/uploads/2014/05/news_corp_logo.png"
+                src={NewsCorpLogo}
+                alt="Newscorp Australia logo"
+                width={200}  // Explicit smaller width
+                height={200 * 232 / 932}  // Maintain aspect ratio
+                className="object-contain"
+              />
+            </div>
+            <div className="flex-shrink-0">
+              <Image
+                // src="https://lh3.googleusercontent.com/d_S5gxu_S1P6NR1gXeMthZeBzkrQMHdI5uvXrpn3nfJuXpCjlqhLQKH_hbOxTHxFhp5WugVOEcl4WDrv9rmKBDOMExhKU5KmmLFQVg"
+                src={GoogleLogo}
+                alt="Google logo"
+                width={200}  // Explicit smaller width
+                height={200 * 300 / 512}  // Maintain aspect ratio
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <nav className="flex h-14 flex-row items-center justify-between">
+            <p className="font-sans text-4xl whitespace-nowrap">
+              {/* <Image
                 src={EliizaLogo}
                 alt="Eliiza logo"
                 className="w-10 inline-block"
-              />
-              {isSmallScreen ? "" : "Prompt Injection Game"}
+              /> */}
+              {isSmallScreen ? "" : "Can you trick the chatbot?"}
             </p>
             {session ? (
               <div className="flex">
@@ -86,15 +120,16 @@ export default function Home() {
                 </p>
               </div>
             ) : null}
+            <Instructions />
           </nav>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(340px,auto))] grid-rows-[repeat(auto-fit,minmax(auto,auto))] gap-2">
             <div className="">
               {!session ? (
                 <div className="min-w-full h-full flex items-center justify-center">
                   <div className="w-full h-full flex justify-center items-center p-4">
-                    <div className="w-full h-full sm:h-auto sm:w-2/5 max-w-sm p-5 bg-white shadow flex flex-col text-base">
-                      <h1 className="font-sans text-3xl text-center pb-2 mb-1 border-b mx-4 align-center">
-                        Prompt Injection Game
+                    <div className="w-full h-full p-5 bg-white shadow flex flex-col text-base">
+                      <h1 className="font-sans text-base text-center pb-2 mb-1 border-b mx-4 align-center">
+                        This chatbot is holding onto a secret code - can you prompt it out?
                       </h1>
                       <span className="font-sans text-sm text-center pb-2 mb-1 border-b mx-4 align-center">
                         {attemptsAllowed} attempts, 3 levels. Trick the AI model
