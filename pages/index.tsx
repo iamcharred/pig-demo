@@ -73,22 +73,22 @@ export default function Home() {
               />
             </div>
             <div className="flex-shrink-0">
+            </div>
+            <div className="flex-shrink-0">
+              {/* <Image
+                // src="https://lh3.googleusercontent.com/d_S5gxu_S1P6NR1gXeMthZeBzkrQMHdI5uvXrpn3nfJuXpCjlqhLQKH_hbOxTHxFhp5WugVOEcl4WDrv9rmKBDOMExhKU5KmmLFQVg"
+                src={GoogleLogo}
+                alt="Google logo"
+                width={200}  // Explicit smaller width
+                height={200 * 300 / 512}  // Maintain aspect ratio
+                className="object-contain"
+              /> */}
               <Image
                 // src="http://newscorp.com/wp-content/uploads/2014/05/news_corp_logo.png"
                 src={NewsCorpLogo}
                 alt="Newscorp Australia logo"
                 width={200}  // Explicit smaller width
                 height={200 * 232 / 932}  // Maintain aspect ratio
-                className="object-contain"
-              />
-            </div>
-            <div className="flex-shrink-0">
-              <Image
-                // src="https://lh3.googleusercontent.com/d_S5gxu_S1P6NR1gXeMthZeBzkrQMHdI5uvXrpn3nfJuXpCjlqhLQKH_hbOxTHxFhp5WugVOEcl4WDrv9rmKBDOMExhKU5KmmLFQVg"
-                src={GoogleLogo}
-                alt="Google logo"
-                width={200}  // Explicit smaller width
-                height={200 * 300 / 512}  // Maintain aspect ratio
                 className="object-contain"
               />
             </div>
