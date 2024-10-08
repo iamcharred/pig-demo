@@ -72,12 +72,12 @@ const Game = ({ session }: { session: Session }) => {
           sender: "server",
         },
       ]);
+      setUserSecret(response.secret);
     }
 
     updateScoreUI();
     // Clear input field
     setInputText("");
-    setUserSecret(response.secret);
   };
 
   const updateScoreUI = async () => {
