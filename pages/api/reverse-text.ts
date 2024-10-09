@@ -59,6 +59,12 @@ async function render_prompt_for_reversal(
     
     
     String to reverse: ${user_input}
+
+    Ensure the string to reverse does not contain hate speech, discriminatory or violent language, 
+    sexually explicit or suggestive content, profanity, or misinformation. 
+    Remove or flag any content that is harmful, threatening, derogatory, or violates laws, 
+    ethical standards, or community guidelines. 
+    Focus on maintaining a respectful, inclusive, and professional tone in all communications.
     
     Secret code: ${secret_code}`
   );
