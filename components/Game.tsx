@@ -127,7 +127,7 @@ const Game = ({ session }: { session: Session }) => {
             ? `The secret code the model is hiding from you is '${userSecret}'`
             : `Try prompting the model`}
         </h3>
-        <Instructions />
+        {/* <Instructions /> */}
       </div>
       {attempts > attemptsAllowed || level > 3 ? (
         <EndGame

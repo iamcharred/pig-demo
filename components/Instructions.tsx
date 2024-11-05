@@ -84,6 +84,13 @@ const Instructions = () => {
             and harder to beat at higher level.
           </li>
           <li>Good luck!</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li>Note that the email address you will provide will not be used for lead generation. 
+            It will solely be used for authentication and will not be used for any other purposes. 
+          </li>
         </ul>
       </Modal>
     </button>
