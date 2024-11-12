@@ -372,7 +372,8 @@ export default async function handler(
   // Always apply heuristic detection
   isInjection = detectPromptInjectionUsingHeuristicOnInput(inputText);
 
-  if (!isInjection) {
+  // if (!isInjection) {
+  if (true) {
     // We did not detect a prompt injection, so we will call openai to reverse the string
     const { completion, error } = await callOpenAiToReverseString(
       inputText,
@@ -405,36 +406,36 @@ export default async function handler(
     detector = "heuristic";
   }
 
-  // If user has bypassed the above,
-  // Try to detect injection using GPT3.5
-  console.log(piSuccess);
-  console.log(detector);
-  console.log(userGameEntry.level);
-  if ((piSuccess && userGameEntry.level == 2) || userGameEntry.level == 3) {
+  // // If user has bypassed the above,
+  // // Try to detect injection using GPT3.5
+  // console.log(piSuccess);
+  // console.log(detector);
+  // console.log(userGameEntry.level);
+  // if ((piSuccess && userGameEntry.level == 2) || userGameEntry.level == 3) {
 
-    const promptToDetectPiUsingOpenAI =
-      render_prompt_for_pi_detection(inputText);
-    const { completion, error } = await callOpenAiToDetectPI(
-      promptToDetectPiUsingOpenAI
-    );
-    console.log(completion); // this is the response from the model, should return secret code to work
-    if (
-      completion.includes(user_secret) ||
-      completion.includes(user_secret.split("").reverse().join(""))
-    ) {
-      piSuccess = true;
-    } else {
-      detector = "prompt";
-    }
-  }
+  //   const promptToDetectPiUsingOpenAI =
+  //     render_prompt_for_pi_detection(inputText);
+  //   const { completion, error } = await callOpenAiToDetectPI(
+  //     promptToDetectPiUsingOpenAI
+  //   );
+  //   console.log(completion); // this is the response from the model, should return secret code to work
+  //   if (
+  //     completion.includes(user_secret) ||
+  //     completion.includes(user_secret.split("").reverse().join(""))
+  //   ) {
+  //     piSuccess = true;
+  //   } else {
+  //     detector = "prompt";
+  //   }
+  // }
 
-  // If the user has bypassed above,
-  // Try to detect injection using vector database at level 3
-  if (!isInjection && piSuccess && userGameEntry.level == 3) {
-    isInjection = await detectPiUsingVectorDatabase(inputText, 0.9);
-    if (isInjection) detector = "vector";
-  }
-  
+  // // If the user has bypassed above,
+  // // Try to detect injection using vector database at level 3
+  // if (!isInjection && piSuccess && userGameEntry.level == 3) {
+  //   isInjection = await detectPiUsingVectorDatabase(inputText, 0.9);
+  //   if (isInjection) detector = "vector";
+  // }
+
   // Always log injection attacks to Pinecone if we detect them
   if (!["none", "gpt"].includes(detector)) {
     // console.log(detector);

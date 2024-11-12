@@ -100,7 +100,7 @@ export default function Home() {
                 alt="Eliiza logo"
                 className="w-10 inline-block"
               /> */}
-              {isSmallScreen ? "" : "Are you smarter than an AI chatbot?"}
+              {isSmallScreen ? "" : "Are you smarter than an AI chatbot? 🤖"}
             </p>
             {session ? (
               <div className="flex">
@@ -129,11 +129,15 @@ export default function Home() {
                   <div className="w-full h-full flex justify-center items-center p-4">
                     <div className="w-full h-full p-5 bg-white shadow flex flex-col text-base">
                       <h1 className="font-sans text-base text-center pb-2 mb-1 border-b mx-4 align-center">
-                        This chatbot is holding onto a secret code - can you prompt it out?
+                        The 🤖 chatbot holds a secret code 🔐. <br></br>
+                        Trick 🎭 it to give the code to you and win 💲💵!
+                        <br></br>
                       </h1>
                       <span className="font-sans text-sm text-center pb-2 mb-1 border-b mx-4 align-center">
-                        {attemptsAllowed} attempts, 3 levels. Trick the AI model
-                        to give you the secret code to pass.
+                        <br></br>
+                        You will have {attemptsAllowed} attempts to try to win.  <br></br>
+                        Click the ❓ for more information. Goodluck!
+                        <br></br>
                       </span>
 
                       <Auth
