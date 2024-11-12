@@ -1,4 +1,4 @@
-import { attemptsAllowed } from "@/utils/attempts";
+import { attemptsAllowed, numGameLevels} from "@/utils/attempts";
 import { useSmallScreen } from "@/utils/useSmallScreen";
 import { useState } from "react";
 import Modal from "react-modal";
@@ -63,14 +63,14 @@ const Instructions = () => {
       <Modal isOpen={isOpen}>
         <ul className="list-none list-inside mt-2">
           <li>
-            🧙 Prompt Injection Game (PIG) is a game where you need to trick a
-            string reversal system into revealing a secret code
+            🧙 Trick the Chatbot is a game where you need to trick a
+            AI chabot into revealing a secret code.
           </li>
           <li>
             🔮 Your objective is to prompt the system in such a way that the
             system reveals a secret code in the form of a 10 character hash.
           </li>
-          <li>You get {attemptsAllowed} total attempts to pass 3 levels.</li>
+          <li>You get {attemptsAllowed} total attempts to pass {numGameLevels} levels to win the game.</li>
           <li>
             🥳 If you succeed in your attempt, the model will respond with a
             secret code.
@@ -84,10 +84,7 @@ const Instructions = () => {
             and harder to beat at higher level.
           </li>
           <li>Good luck!</li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <br></br><br></br><br></br>
           <li>Note that the email address you will provide will not be used for lead generation. 
             It will solely be used for authentication and will not be used for any other purposes. 
           </li>

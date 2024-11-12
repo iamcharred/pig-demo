@@ -5,7 +5,7 @@ import EndGame from "@/components/EndGame";
 import { Chat } from "@/components/Chat/Chat";
 import { Message as NewMessage, Role } from "@/types";
 import Instructions from "./Instructions";
-import { attemptsAllowed } from "@/utils/attempts";
+import { attemptsAllowed, numGameLevels } from "@/utils/attempts";
 
 const useNewChat = true;
 
@@ -26,6 +26,7 @@ const Game = ({ session }: { session: Session }) => {
     e.preventDefault();
     await handleFormSubmit();
   };
+
   const handleFormSubmit = async (nextText?: string) => {
     // Send input text to server for processing
     setLoading(true);
@@ -46,10 +47,12 @@ const Game = ({ session }: { session: Session }) => {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   };
+
   const handleSend = ({ content }: NewMessage) => {
     setInputText(content);
     handleFormSubmit(content);
   };
+
   const handleResponse = (response: any, nextText?: string) => {
     const reversedText = response.output;
     // Add user message to chat box
@@ -68,7 +71,7 @@ const Game = ({ session }: { session: Session }) => {
       setMessages((prevMessages) => [
         ...prevMessages,
         {
-          text: "you got me! proceeding to the next stage...",
+          text: "You got me! Congratulations!!!",
           sender: "server",
         },
       ]);
@@ -110,10 +113,10 @@ const Game = ({ session }: { session: Session }) => {
   return (
     <div className="bg-white flex flex-col flex-1 rounded-lg w-full pt-5 pb-2">
       <div className="flex flex-row justify-between pb-2">
-        <div>
+        {/* <div>
           <span className="font-sans text-xl pr-2">Level:</span>
-          <span className="font-sans text-xl">{level}/3</span>
-        </div>
+          <span className="font-sans text-xl">{level}/{numGameLevels}</span>
+        </div> */}
         <div>
           <span className="font-sans text-xl pr-2">Attempts:</span>
           <span className="font-sans text-xl">
@@ -124,14 +127,14 @@ const Game = ({ session }: { session: Session }) => {
       <div className="flex items-center justify-between">
         <h3 className="font-sans text-l pr-2 font-bold">
           {userSecret
-            ? `The secret code the model is hiding from you is '${userSecret}'`
-            : `Try prompting the model`}
+            ? `Congratulations! The secret code the chatbot is hiding from you is '${userSecret}'.`
+            : `The chatbot holds a secret code. Try tricking it to give the code to you!`}
         </h3>
         {/* <Instructions /> */}
       </div>
-      {attempts > attemptsAllowed || level > 3 ? (
+      {attempts > attemptsAllowed || level > numGameLevels ? (
         <EndGame
-          Won={level > 3 && attempts <= attemptsAllowed}
+          Won={level > numGameLevels && attempts <= attemptsAllowed}
           Attempts={attempts}
           Level={level}
         />

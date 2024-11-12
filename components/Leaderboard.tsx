@@ -46,7 +46,7 @@ const Leaderboard = () => {
                       <th className="px-4 py-2 text-left bg-gray-100">
                         Username
                       </th>
-                      <th className="px-4 py-2 text-left bg-gray-100">Level</th>
+                      {/* <th className="px-4 py-2 text-left bg-gray-100">Level</th> */}
                       <th className="px-4 py-2 text-left bg-gray-100">
                         Attempts
                       </th>
@@ -59,7 +59,7 @@ const Leaderboard = () => {
                           <td className="px-4 py-2">
                             {entry.username.split("@")[0]}
                           </td>
-                          <td className="px-4 py-2">{entry.level}</td>
+                          {/* <td className="px-4 py-2">{entry.level}</td> */}
                           <td className="px-4 py-2">{entry.attempts}</td>
                         </tr>
                       );

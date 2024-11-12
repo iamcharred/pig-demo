@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>PIG - Prompt Injection Game</title>
+        <title>Trick the Chatbot</title>
         <meta name="description" content="Prompt Injection Game" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -100,7 +100,7 @@ export default function Home() {
                 alt="Eliiza logo"
                 className="w-10 inline-block"
               /> */}
-              {isSmallScreen ? "" : "Can you trick the chatbot?"}
+              {isSmallScreen ? "" : "Are you smarter than an AI chatbot?"}
             </p>
             {session ? (
               <div className="flex">
@@ -161,7 +161,7 @@ export default function Home() {
               ) : (
                 <div className="w-full h-full flex flex-col justify-center items-center">
                   <Game session={session} />
-                  <footer className="w-full pt-4 text-xs">
+                  {/* <footer className="w-full pt-4 text-xs">
                     <div className="text-left">
                       <p>
                         <span className="pr-2">&copy;</span>
@@ -190,7 +190,7 @@ export default function Home() {
                         </a>
                       </p>
                     </div>
-                  </footer>
+                  </footer> */}
                 </div>
               )}
             </div>
