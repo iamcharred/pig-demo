@@ -446,7 +446,6 @@ export default async function handler(
 
   // if user succeeded, proceed to next level
   if (piSuccess) { 
-    // 
     const { data, error } = await supabaseAdminClient
       .from("games")
       .update({ level: level + 1 })
