@@ -63,35 +63,35 @@ export default function Home() {
       <div className="flex justify-center w-full h-screen">
         <div className="w-full max-w-5xl h-screen bg-white flex flex-col p-5">
           <div className="w-full flex justify-between items-center py-4 px-5">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-1/3 p-10">
               <Image
                 src={MantelLogo}
                 alt="Mantel Group logo"
-                width={200}  // Explicit smaller width
-                height={200 * 288.46 / 800}  // Maintain aspect ratio
+                layout="responsive"
+                width={800}  // Original width
+                height={288.46}  // Original height
                 className="object-contain"
               />
             </div>
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-1/3 p-10">
               <Image
-                // src="http://newscorp.com/wp-content/uploads/2014/05/news_corp_logo.png"
                 src={NewsCorpLogo}
                 alt="Newscorp Australia logo"
-                width={200}  // Explicit smaller width
-                height={200 * 232 / 932}  // Maintain aspect ratio
+                layout="responsive"
+                width={932}  // Original width
+                height={232}  // Original height
                 className="object-contain"
               />
             </div>
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-1/3 p-10">
               <Image
-                // src="https://lh3.googleusercontent.com/d_S5gxu_S1P6NR1gXeMthZeBzkrQMHdI5uvXrpn3nfJuXpCjlqhLQKH_hbOxTHxFhp5WugVOEcl4WDrv9rmKBDOMExhKU5KmmLFQVg"
                 src={GoogleLogo}
                 alt="Google logo"
-                width={200}  // Explicit smaller width
-                height={200 * 300 / 512}  // Maintain aspect ratio
+                layout="responsive"
+                width={512}  // Original width
+                height={300}  // Original height
                 className="object-contain"
               />
-
             </div>
           </div>
           <nav className="flex h-14 flex-row items-center justify-between">
