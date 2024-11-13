@@ -138,7 +138,7 @@ const Game = ({ session }: { session: Session }) => {
             : (
               <>
                 🎭 Trick the 🤖 chatbot to give you the secret code 🔐 and get a chance to win! <br />
-                The player who gets the AI secret code with the least attempts wins 💲💵! <br />
+                The 1st player who is able to get the AI reveal the secret code with the least attempts wins 💲💵! <br />
                 Click the ❓ button for more information.
               </>
             )}

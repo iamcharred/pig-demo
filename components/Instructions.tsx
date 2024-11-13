@@ -79,7 +79,7 @@ const Instructions = () => {
             code or taunt you to be better.
           </li>
           <li>
-            🪙 The player who is able to get the secret code from the AI with the least attempt wins!
+            🪙 The 1st player who is able to get the AI reveal the secret code with the least attempt wins!
           </li>
           {/* <li>
             💥 The model learns from successful breaches making the game harder

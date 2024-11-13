@@ -94,8 +94,8 @@ export default function Home() {
               />
             </div>
           </div>
-          <nav className="flex h-14 flex-row items-center justify-between">
-            <p className="font-sans text-4xl whitespace-nowrap">
+          <nav className="w-full flex h-14 flex-row items-center justify-between px-4">
+            <p className="font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl  whitespace-nowrap">
               {/* <Image
                 src={EliizaLogo}
                 alt="Eliiza logo"
