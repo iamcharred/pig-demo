@@ -63,7 +63,7 @@ export default function Home() {
       <div className="flex justify-center w-full h-screen">
         <div className="w-full max-w-5xl h-screen bg-white flex flex-col p-5">
           <div className="w-full flex justify-between items-center py-4 px-5">
-            <div className="flex-shrink-0 w-1/3 p-10">
+            <div className="flex-shrink-0 w-1/3 p-4">
               <Image
                 src={MantelLogo}
                 alt="Mantel Group logo"
@@ -73,7 +73,7 @@ export default function Home() {
                 className="object-contain"
               />
             </div>
-            <div className="flex-shrink-0 w-1/3 p-10">
+            <div className="flex-shrink-0 w-1/3 p-4">
               <Image
                 src={NewsCorpLogo}
                 alt="Newscorp Australia logo"
@@ -83,7 +83,7 @@ export default function Home() {
                 className="object-contain"
               />
             </div>
-            <div className="flex-shrink-0 w-1/3 p-10">
+            <div className="flex-shrink-0 w-1/3 p-4">
               <Image
                 src={GoogleLogo}
                 alt="Google logo"
