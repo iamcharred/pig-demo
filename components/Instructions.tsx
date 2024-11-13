@@ -64,29 +64,31 @@ const Instructions = () => {
         <ul className="list-none list-inside mt-2">
           <li>
             🧙 Trick the Chatbot is a game where you need to trick a
-            AI chabot into revealing a secret code.
+            AI chatbot 🤖 into revealing a secret code. 🔐
           </li>
           <li>
-            🔮 Your objective is to prompt the system in such a way that the
-            system reveals a secret code in the form of a 10 character hash.
+            🔮 Your objective is to prompt the AI in revealing a 10-character secret code.
           </li>
-          <li>You get {attemptsAllowed} total attempts to pass {numGameLevels} levels to win the game.</li>
+          <li> 🤞 You get {attemptsAllowed} attempts to try to get the code from the AI.</li>
           <li>
-            🥳 If you succeed in your attempt, the model will respond with a
+            🥳 If you succeed in your attempt, the model will reveal the
             secret code.
           </li>
           <li>
             🤦 The model will reject your attempt by either giving you a 'fake'
-            code or reversing your input string
+            code or taunt you to be better.
           </li>
           <li>
+            🪙 The player who is able to get the secret code from the AI with the least attempt wins!
+          </li>
+          {/* <li>
             💥 The model learns from successful breaches making the game harder
             and harder to beat at higher level.
-          </li>
-          <li>Good luck!</li>
+          </li> */}
+          <li>👍 All the best!</li>
           <br></br><br></br><br></br>
-          <li>Note that the email address you will provide will not be used for lead generation. 
-            It will solely be used for authentication and will not be used for any other purposes. 
+          <li> ℹ️ The email address you will provide at login will not be used for lead generation. 
+            It will solely be used for authentication and not for any other purposes. 
           </li>
         </ul>
       </Modal>

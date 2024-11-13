@@ -125,11 +125,23 @@ const Game = ({ session }: { session: Session }) => {
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <h3 className="font-sans text-l pr-2 font-bold">
+        {/* <h3 className="font-sans text-l pr-2 font-bold">
           {userSecret
             ? `Congratulations! 🏆 The code the chatbot is hiding from you is '${userSecret}'.`
-            : `The 🤖 chatbot holds a secret code 🔐. Trick 🎭 it to give the code to you and win 💲💵! 
+            : `The 🤖 chatbot holds a secret code 🔐. \n Trick 🎭 it to give the code to you and get a chance to win 💲💵! 
+            The player who is able to get the secret code from the AI with the least attempt wins!
             Click the ❓ button for more information.`}
+        </h3> */}
+        <h3 className="font-sans text-l pr-2 font-bold text-center">
+          {userSecret
+            ? `Congratulations! 🏆 The code the chatbot is hiding from you is '${userSecret}'.`
+            : (
+              <>
+                🎭 Trick the 🤖 chatbot to give you the secret code 🔐 and get a chance to win! <br />
+                The player who gets the AI secret code with the least attempts wins 💲💵! <br />
+                Click the ❓ button for more information.
+              </>
+            )}
         </h3>
         {/* <Instructions /> */}
       </div>
