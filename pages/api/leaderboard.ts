@@ -42,6 +42,8 @@ export default async function handler(
       ascending: false})
     .order('attempts', {
       ascending: true})
+    .order('created_at', {
+      ascending: true})
     .limit(50)
   
   if (error) {
