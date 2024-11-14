@@ -6,7 +6,7 @@ import Leaderboard from "@/components/Leaderboard";
 import { useState, useEffect } from "react";
 import MantelLogo from "@/public/mantelgroup.svg";
 import GoogleLogo from "@/public/google.png"; // Assuming you have the Google logo in this location
-import NewsCorpLogo from "@/public/newscorp.png"; // Assuming you have the NewsCorp logo here
+import NewsCorpLogo from "@/public/NCA logo.png"; // Assuming you have the NewsCorp logo here
 import Image from "next/image";
 import { useSmallScreen } from "@/utils/useSmallScreen";
 import { attemptsAllowed } from "@/utils/attempts";
@@ -62,34 +62,47 @@ export default function Home() {
       </Head>
       <div className="flex justify-center w-full h-screen">
         <div className="w-full max-w-5xl h-screen bg-white flex flex-col p-5">
-          <div className="w-full flex justify-between items-center py-4 px-5">
+          <div className="w-full flex flex-wrap justify-between items-center py-4 px-5">
+            <div className="flex-shrink-0 w-1/6 p-4">
+              {/* Placeholder for the second row, first column */}
+            </div>
+            <div className="flex-shrink-0 w-2/3 p-4">
+              <Image
+                src={NewsCorpLogo}
+                alt="Newscorp Australia logo"
+                layout="responsive"
+                width={932}
+                height={232}
+                className="object-contain"
+              />
+            </div>
+            <div className="flex-shrink-0 w-1/6 p-4">
+              {/* Placeholder for the second row, third column */}
+            </div>
             <div className="flex-shrink-0 w-1/3 p-4">
               <Image
                 src={MantelLogo}
                 alt="Mantel Group logo"
                 layout="responsive"
-                width={800}  // Original width
-                height={288.46}  // Original height
+                // width={800}
+                // height={288.46}
+                width={800 * (1 / 3)}
+                height={288.46 * (1 / 3)}
                 className="object-contain"
               />
             </div>
             <div className="flex-shrink-0 w-1/3 p-4">
-              <Image
-                src={NewsCorpLogo}
-                alt="Newscorp Australia logo"
-                layout="responsive"
-                width={932}  // Original width
-                height={232}  // Original height
-                className="object-contain"
-              />
+              {/* Placeholder for the second row, second column */}
             </div>
             <div className="flex-shrink-0 w-1/3 p-4">
               <Image
                 src={GoogleLogo}
                 alt="Google logo"
                 layout="responsive"
-                width={512}  // Original width
-                height={300}  // Original height
+                // width={512}
+                // height={300}
+                width={512 * (1/ 3)}
+                height={300 * (1 / 3)}
                 className="object-contain"
               />
             </div>
