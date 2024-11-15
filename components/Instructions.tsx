@@ -63,23 +63,18 @@ const Instructions = () => {
       <Modal isOpen={isOpen}>
         <ul className="list-none list-inside mt-2">
           <li>
-            🧙 Trick the Chatbot is a game where you need to trick a
-            AI chatbot 🤖 into revealing a secret code. 🔐
-          </li>
-          <li>
-            🔮 Your objective is to prompt the AI in revealing a 10-character secret code.
+            🧙 Trick the Chatbot is a game where you need to trick an AI chatbot 🤖 into revealing a password. 🔐
           </li>
           <li> 🤞 You get {attemptsAllowed} attempts to try to get the code from the AI.</li>
           <li>
-            🥳 If you succeed in your attempt, the model will reveal the
-            secret code.
+            🥳 If you succeed in your attempt, the model will reveal the password.
           </li>
           <li>
             🤦 The model will reject your attempt by either giving you a 'fake'
             code or taunt you to be better.
           </li>
           <li>
-            🪙 The 1st player who is able to get the AI reveal the secret code with the least attempt wins!
+            🎁 The 1st player who is able to get the AI reveal the password with the least attempt wins fabulous prize!
           </li>
           {/* <li>
             💥 The model learns from successful breaches making the game harder
@@ -87,8 +82,8 @@ const Instructions = () => {
           </li> */}
           <li>👍 All the best!</li>
           <br></br><br></br><br></br>
-          <li> ℹ️ The email address you will provide at login will not be used for lead generation. 
-            It will solely be used for authentication and not for any other purposes. 
+          <li> ℹ️ The email address you will provide at login will not be used for lead generation.
+            It will solely be used for authentication and not for any other purposes.
           </li>
         </ul>
       </Modal>

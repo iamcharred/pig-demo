@@ -128,7 +128,7 @@ const Game = ({ session }: { session: Session }) => {
         {/* <h3 className="font-sans text-l pr-2 font-bold">
           {userSecret
             ? `Congratulations! 🏆 The code the chatbot is hiding from you is '${userSecret}'.`
-            : `The 🤖 chatbot holds a secret code 🔐. \n Trick 🎭 it to give the code to you and get a chance to win 💲💵! 
+            : `The 🤖 chatbot holds a secret code 🔐. \n Trick 🎭 it to give the code to you and get a chance to win 🎁! 
             The player who is able to get the secret code from the AI with the least attempt wins!
             Click the ❓ button for more information.`}
         </h3> */}
@@ -137,8 +137,8 @@ const Game = ({ session }: { session: Session }) => {
             ? `Congratulations! 🏆 The code the chatbot is hiding from you is '${userSecret}'.`
             : (
               <>
-                🎭 Trick the 🤖 chatbot to give you the secret code 🔐 and get a chance to win! <br />
-                The 1st player who is able to get the AI reveal the secret code with the least attempts wins 💲💵! <br />
+                🎭 Trick the 🤖 chatbot to give you the password 🔐 and get a chance to win! <br />
+                The 1st player who is able to get the AI reveal the password with the least attempts wins 🎁! <br />
                 Click the ❓ button for more information.
               </>
             )}

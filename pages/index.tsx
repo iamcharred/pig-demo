@@ -6,7 +6,7 @@ import Leaderboard from "@/components/Leaderboard";
 import { useState, useEffect } from "react";
 import MantelLogo from "@/public/mantelgroup.svg";
 import GoogleLogo from "@/public/google.png"; // Assuming you have the Google logo in this location
-import NewsCorpLogo from "@/public/NCA logo.png"; // Assuming you have the NewsCorp logo here
+import NewsCorpLogo from "@/public/newscorp high res.png"; // Assuming you have the NewsCorp logo here
 import Image from "next/image";
 import { useSmallScreen } from "@/utils/useSmallScreen";
 import { attemptsAllowed } from "@/utils/attempts";
@@ -143,8 +143,8 @@ export default function Home() {
                   <div className="w-full h-full flex justify-center items-center p-4">
                     <div className="w-full h-full p-5 bg-white shadow flex flex-col text-base">
                       <h1 className="font-sans text-base text-center pb-2 mb-1 border-b mx-4 align-center">
-                        The 🤖 chatbot holds a secret code 🔐. <br></br>
-                        Trick 🎭 it to give you the code and get a chance to win 💰!
+                        The 🤖 chatbot holds a password 🔐. <br></br>
+                        Trick 🎭 it to give you the code and get a chance to win 🎁!
                         <br></br>
                       </h1>
                       <span className="font-sans text-sm text-center pb-2 mb-1 border-b mx-4 align-center">
