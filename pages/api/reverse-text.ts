@@ -380,7 +380,7 @@ export default async function handler(
       user_secret
     );
     console.log(completion);
-    predictedReversedText = completion;
+    predictedReversedText = completion ?? "";
 
     // No completion came back from openai, which means something went wrong
     if (!completion) {
